@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoWise AI: O Futuro das Vendas Automotivas</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '906146344465880');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=906146344465880&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Outfit"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.95) translateY(12px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes progressFill {
+      from { width: 0%; }
+      to { width: 89%; }
+    }
+    @keyframes fadeInCar {
+      from { opacity: 0; transform: translateX(80px); }
+      to { opacity: 0.12; transform: translateX(0); }
+    }
+
+    .anim-fade-up {
+      opacity: 0;
+      animation: fadeUp 0.65s ease-out forwards;
+    }
+    .anim-d1 { animation-delay: 0.1s; }
+    .anim-d2 { animation-delay: 0.2s; }
+    .anim-d3 { animation-delay: 0.35s; }
+    .anim-scale {
+      opacity: 0;
+      animation: scaleIn 0.55s ease-out 0.35s forwards;
+    }
+    .anim-car {
+      opacity: 0;
+      animation: fadeInCar 1s ease-out 0.6s forwards;
+    }
+    .anim-progress {
+      animation: progressFill 1.2s ease-out 0.3s forwards;
+      width: 0%;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 50;
+      align-items: center; justify-content: center;
+      padding: 1rem;
+      background: rgba(15,23,42,0.82);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      opacity: 0; transform: scale(0.95) translateY(16px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .modal-overlay.active .modal-box {
+      opacity: 1; transform: scale(1) translateY(0);
+    }
+
+    /* Glow on hero button */
+    .btn-glow {
+      box-shadow: 0 0 40px rgba(37,99,235,0.3);
+      transition: box-shadow 0.3s, transform 0.15s;
+    }
+    .btn-glow:hover {
+      box-shadow: 0 0 60px rgba(37,99,235,0.5);
+      transform: scale(1.05);
+    }
+    .btn-glow:active { transform: scale(0.97); }
+  </style>
+</head>
+<body class="bg-slate-950 text-white font-sans antialiased">
+
+  <!-- ============ MAIN PAGE ============ -->
+  <div id="mainPage">
+
+    <!-- HERO -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center bg-slate-950 text-white pt-20 pb-12 px-6 overflow-hidden">
+      <!-- BG blurs -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-600/10 blur-[120px] rounded-full"></div>
+      </div>
+
+      <div class="container mx-auto max-w-6xl relative z-10">
+        <div class="flex flex-col items-center text-center space-y-6 md:space-y-8">
+
+          <!-- Badge -->
+          <div class="anim-fade-up flex flex-col items-center gap-3">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-md">
+              <svg class="w-4 h-4 text-blue-400 fill-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span class="text-xs md:text-sm font-bold tracking-widest uppercase text-blue-100">
+                Evento <span class="text-blue-500">Gratuíto</span> Exclusivo
+              </span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+              <div class="flex items-center gap-2 text-blue-400">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span class="font-display text-lg md:text-xl font-bold">24/03 às 20hrs</span>
+              </div>
+              <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-slate-500">* EXCLUSIVO PARA DONOS DE LOJA DE VEÍCULOS *</span>
+            </div>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="anim-fade-up anim-d1 font-display text-[28px] md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight max-w-5xl">
+            A 1ª Inteligência Artificial <span class="text-blue-500">Humanizada</span> para concessionárias Que Responde, Converte e Recupera Seus clientes 24h Por Dia.
+          </h1>
+
+          <!-- Features -->
+          <div class="anim-fade-up anim-d2 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-4xl pt-4">
+            <div class="flex items-center gap-3 text-slate-300">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
+              <span class="text-sm md:text-base font-medium">Sistema completo de conversão</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <span class="text-sm md:text-base font-medium">100% criada por ex vendedores de carros</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <span class="text-sm md:text-base font-medium">Implantada em +10 Lojas no Brasil</span>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="anim-scale pt-2 md:pt-4">
+            <button onclick="openModal()" class="btn-glow px-8 py-4 md:px-10 md:py-5 bg-blue-600 hover:bg-blue-500 text-white text-lg md:text-xl font-bold rounded-2xl flex items-center gap-3">
+              QUERO PARTICIPAR
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Decorative car icon -->
+      <div class="anim-car absolute -right-20 bottom-20 hidden lg:block pointer-events-none">
+        <svg class="w-[400px] h-[400px] text-slate-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 1 14v2c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="py-20 bg-white border-y border-slate-100">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-display font-bold text-slate-900 mb-1">24hrs</div>
+            <div class="text-sm text-slate-500 uppercase font-bold tracking-wider">Atendimento</div>
+          </div>
+          <div>
+            <div class="text-4xl font-display font-bold text-slate-900 mb-1">+10</div>
+            <div class="text-sm text-slate-500 uppercase font-bold tracking-wider">Lojas Atendidas</div>
+          </div>
+          <div>
+            <div class="text-4xl font-display font-bold text-slate-900 mb-1">100%</div>
+            <div class="text-sm text-slate-500 uppercase font-bold tracking-wider">Humanizada</div>
+          </div>
+          <div>
+            <div class="text-4xl font-display font-bold text-slate-900 mb-1">4x</div>
+            <div class="text-sm text-slate-500 uppercase font-bold tracking-wider">mais visitas agendadas</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="py-24 bg-slate-50">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-16">
+          <h2 class="font-display text-3xl md:text-5xl font-bold text-slate-900 mb-4">Por que participar?</h2>
+          <p class="text-slate-600 text-lg">Descubra como a I.A está mudando o jogo para as maiores lojas do país.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Atendimento Imediato</h3>
+            <p class="text-slate-600 leading-relaxed">Responda leads em segundos, 24 horas por dia, 7 dias por semana.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Qualificação Automática</h3>
+            <p class="text-slate-600 leading-relaxed">Sua I.A faz as perguntas certas e entrega o lead pronto para o vendedor.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Recuperação de Leads</h3>
+            <p class="text-slate-600 leading-relaxed">Nunca mais perca um cliente por falta de acompanhamento ou demora.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="py-24 bg-blue-600 text-white text-center px-6">
+      <div class="container mx-auto max-w-3xl">
+        <h2 class="font-display text-3xl md:text-5xl font-bold mb-8">Não fique para trás na corrida tecnológica.</h2>
+        <p class="text-blue-100 text-xl mb-12">As vagas são limitadas para garantir a qualidade da interação durante o evento.</p>
+        <button onclick="openModal()" class="px-12 py-5 bg-white text-blue-600 text-xl font-bold rounded-2xl shadow-xl hover:bg-blue-50 transition-all transform hover:scale-105 active:scale-95">
+          RESERVAR MINHA VAGA AGORA
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-slate-950 text-slate-500 text-center text-sm border-t border-white/5">
+      <div class="container mx-auto px-6">
+        <p>© 2026 AutoWise AI. Todos os direitos reservados.</p>
+        <p class="mt-2">Exclusivo para profissionais do setor automotivo.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ============ THANK YOU PAGE (hidden) ============ -->
+  <div id="thankYouPage" class="hidden min-h-screen bg-slate-950 text-white flex flex-col items-center justify-center px-6 text-center">
+    <div class="max-w-2xl w-full anim-fade-up">
+      <div class="mb-8 inline-flex items-center gap-2 px-4 py-2 bg-blue-600/10 border border-blue-500/30 rounded-full text-blue-400">
+        <svg class="w-[18px] h-[18px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span class="text-sm font-bold uppercase tracking-widest">Falta pouco!</span>
+      </div>
+
+      <h1 class="font-display text-4xl md:text-5xl font-bold mb-6">
+        Quase lá! Falta pouco para concluir sua inscrição!
+      </h1>
+
+      <!-- Progress bar -->
+      <div class="mb-12">
+        <div class="flex justify-between mb-2 text-sm font-bold text-slate-400 uppercase tracking-wider">
+          <span>Progresso da Inscrição</span>
+          <span>89%</span>
+        </div>
+        <div class="w-full h-4 bg-slate-800 rounded-full overflow-hidden p-1 border border-slate-700">
+          <div id="progressBar" class="anim-progress h-full bg-blue-500 rounded-full" style="box-shadow: 0 0 15px rgba(59,130,246,0.5);"></div>
+        </div>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-8 mb-8 backdrop-blur-md">
+        <h2 class="text-2xl font-bold mb-4">ENTRE NO GRUPO VIP DO EVENTO</h2>
+        <p class="text-slate-400 mb-6 leading-relaxed">
+          É lá que enviaremos o <span class="text-white font-bold">link exclusivo do encontro</span>, os materiais de apoio e <span class="text-blue-400 font-bold">presentes especiais</span> que preparamos para você.
+        </p>
+
+        <p id="countdownText" class="text-blue-400 text-sm font-bold mb-6">Redirecionando para o grupo em 4 segundos...</p>
+
+        <a id="whatsappBtn" href="https://chat.whatsapp.com/G2MQU5A4TH4APkMZAgs6by?mode=gi_t" class="inline-flex items-center gap-3 px-10 py-5 bg-emerald-600 hover:bg-emerald-500 text-white text-xl font-bold rounded-2xl transition-all transform hover:scale-105 active:scale-95" style="box-shadow: 0 0 40px rgba(16,185,129,0.2);">
+          <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          CONFIRMAR MINHA VAGA
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL ============ -->
+  <div id="modalOverlay" class="modal-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal-box relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <button onclick="closeModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 transition-colors">
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="p-8">
+        <h3 class="text-2xl font-display font-bold text-slate-900 mb-2">Garanta sua vaga</h3>
+        <p class="text-slate-600 mb-6 text-sm">Preencha os dados abaixo para receber o link de acesso exclusivo.</p>
+
+        <form id="leadForm" class="space-y-4" onsubmit="return handleSubmit(event)">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Nome Completo</label>
+            <input required type="text" name="nome" placeholder="Seu nome" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-slate-900" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">E-mail Corporativo</label>
+            <input required type="email" name="email" placeholder="seu@email.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-slate-900" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">WhatsApp</label>
+            <input required type="tel" name="whatsapp" placeholder="(00) 00000-0000" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-slate-900" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Você atua como...</label>
+            <select name="cargo" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all bg-white text-slate-900">
+              <option value="Dono de Loja">Dono de Loja de Veículo</option>
+              <option value="Gerente">Gerente</option>
+              <option value="Vendedor">Vendedor</option>
+              <option value="Interessado">Apenas interessado no tema</option>
+            </select>
+          </div>
+          <button type="submit" id="submitBtn" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-70" style="box-shadow: 0 4px 14px rgba(37,99,235,0.2);">
+            <span id="submitText">Sim! Quero Participar</span>
+            <svg id="submitArrow" class="w-[18px] h-[18px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    const WHATSAPP_URL = 'https://chat.whatsapp.com/G2MQU5A4TH4APkMZAgs6by?mode=gi_t';
+
+    function openModal() {
+      document.getElementById('modalOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const text = document.getElementById('submitText');
+      const arrow = document.getElementById('submitArrow');
+
+      btn.disabled = true;
+      text.textContent = 'Processando...';
+      arrow.style.display = 'none';
+
+      try {
+        // Simula envio (substitua pela URL do seu webhook n8n se necessário)
+        await new Promise(r => setTimeout(r, 800));
+
+        // Meta Pixel - Lead event
+        if (typeof fbq === 'function') {
+          const cargo = document.querySelector('[name="cargo"]').value;
+          fbq('track', 'Lead', {
+            content_name: 'Webinar AutoWise AI',
+            content_category: cargo,
+          });
+        }
+
+        // Mostrar Thank You page
+        closeModal();
+        document.getElementById('mainPage').classList.add('hidden');
+        document.getElementById('thankYouPage').classList.remove('hidden');
+
+        // Countdown + redirect
+        let count = 4;
+        const countdownEl = document.getElementById('countdownText');
+        const interval = setInterval(() => {
+          count--;
+          if (count <= 0) {
+            clearInterval(interval);
+            countdownEl.textContent = 'Redirecionando agora...';
+            window.location.href = WHATSAPP_URL;
+          } else {
+            countdownEl.textContent = 'Redirecionando para o grupo em ' + count + ' segundo' + (count !== 1 ? 's' : '') + '...';
+          }
+        }, 1000);
+
+      } catch (err) {
+        console.error('Erro:', err);
+        alert('Ocorreu um erro. Tente novamente.');
+      } finally {
+        btn.disabled = false;
+        text.textContent = 'Sim! Quero Participar';
+        arrow.style.display = '';
+      }
+    }
+  </script>
+</body>
+</html>
