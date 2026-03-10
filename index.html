@@ -372,12 +372,28 @@
       arrow.style.display = 'none';
 
       try {
-        // Simula envio (substitua pela URL do seu webhook n8n se necessário)
-        await new Promise(r => setTimeout(r, 800));
+        // Envia dados do lead para o webhook
+        const form = document.getElementById('leadForm');
+        const nome = form.querySelector('[name="nome"]').value;
+        const email = form.querySelector('[name="email"]').value;
+        const whatsapp = form.querySelector('[name="whatsapp"]').value;
+        const cargo = form.querySelector('[name="cargo"]').value;
+
+        await fetch('https://webhook.autowisebrasil.com.br/webhook/evento', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nome: nome,
+            email: email,
+            whatsapp: whatsapp,
+            cargo: cargo,
+            timestamp: new Date().toISOString(),
+            source: 'Webinar Landing Page'
+          })
+        });
 
         // Meta Pixel - Lead event
         if (typeof fbq === 'function') {
-          const cargo = document.querySelector('[name="cargo"]').value;
           fbq('track', 'Lead', {
             content_name: 'Webinar AutoWise AI',
             content_category: cargo,
